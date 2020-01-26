@@ -1,0 +1,43 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Be.Stateless.BizTalk.Schemas", "src\Be.Stateless.BizTalk.Schemas\Be.Stateless.BizTalk.Schemas.csproj", "{8FD95833-D079-40A7-BA3F-4554F8E8D7D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Be.Stateless.BizTalk.Schemas.Tests", "src\Be.Stateless.BizTalk.Schemas.Tests\Be.Stateless.BizTalk.Schemas.Tests.csproj", "{4B8A0A41-F56E-41DE-A40C-5B6878891EA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{9573BA48-4274-4B6C-BDDF-A0E7FCD3266F}"
+	ProjectSection(SolutionItems) = preProject
+		build\be.stateless.public.snk = build\be.stateless.public.snk
+		build\build.ps1 = build\build.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common.msbuild", "Common.msbuild", "{8382DAE4-F2DF-44A7-975F-28CA1915BC2E}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+		src\Directory.Build.targets = src\Directory.Build.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FD95833-D079-40A7-BA3F-4554F8E8D7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FD95833-D079-40A7-BA3F-4554F8E8D7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FD95833-D079-40A7-BA3F-4554F8E8D7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FD95833-D079-40A7-BA3F-4554F8E8D7D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B8A0A41-F56E-41DE-A40C-5B6878891EA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B8A0A41-F56E-41DE-A40C-5B6878891EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B8A0A41-F56E-41DE-A40C-5B6878891EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B8A0A41-F56E-41DE-A40C-5B6878891EA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB65DE73-F29D-4AB8-A13E-23C0AD2C4B34}
+	EndGlobalSection
+EndGlobal

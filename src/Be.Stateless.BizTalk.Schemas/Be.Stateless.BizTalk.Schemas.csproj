@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <!--<TargetFrameworks>netcoreapp2.2;net472</TargetFrameworks>-->
+    <RootNamespace>Be.Stateless.BizTalk</RootNamespace>
+    <AssemblyTitle>Be.Stateless.BizTalk.Schemas</AssemblyTitle>
+    <Description>BizTalk Factory's document and property schemas for general purpose BizTalk Server development.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/icraftsoftware/Be.Stateless.BizTalk.Schemas</RepositoryUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild Condition=" '$(GeneratePackageOnBuild)' == '' ">false</GeneratePackageOnBuild>
+    <PackageId>$(AssemblyTitle)</PackageId>
+    <PackageDescription>$(Description)</PackageDescription>
+    <!--<PackageIconUrl>icon url prop</PackageIconUrl>-->
+    <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+    <!--<PackageReleaseNotes>release notes prop</PackageReleaseNotes>-->
+    <PackageTags>library extension utility</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Be.Stateless.Extensions" Version="2.0.20005.55750" />
+    <PackageReference Include="BizTalk.Server.2020.Build" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Schema Include="Schemas\Xml\Any.xsd">
+      <TypeName>Any</TypeName>
+      <Namespace>Be.Stateless.BizTalk.Schemas.Xml</Namespace>
+    </Schema>
+    <Schema Include="Schemas\Xml\Envelope.xsd">
+      <TypeName>Envelope</TypeName>
+      <Namespace>Be.Stateless.BizTalk.Schemas.Xml</Namespace>
+    </Schema>
+    <Schema Include="Schemas\BizTalkFactoryProperties.xsd">
+      <TypeName>Properties</TypeName>
+      <Namespace>Be.Stateless.BizTalk.Schemas.BizTalkFactory</Namespace>
+    </Schema>
+    <Schema Include="Schemas\EdiProperties.xsd">
+      <TypeName>UnexposedEdiProperties</TypeName>
+      <Namespace>EDI</Namespace>
+    </Schema>
+    <Schema Include="Schemas\SftpProperties.xsd">
+      <TypeName>ConcealedProperties</TypeName>
+      <Namespace>WCF</Namespace>
+    </Schema>
+    <Schema Include="Schemas\SystemProperties.xsd">
+      <TypeName>UnexposedSystemProperties</TypeName>
+      <Namespace>BTS</Namespace>
+    </Schema>
+  </ItemGroup>
+
+</Project>
