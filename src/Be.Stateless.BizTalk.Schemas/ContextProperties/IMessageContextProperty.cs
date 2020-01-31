@@ -17,6 +17,7 @@
 #endregion
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Xml;
 using Microsoft.XLANGs.BaseTypes;
 
@@ -30,6 +31,7 @@ namespace Be.Stateless.BizTalk.ContextProperties
 	{
 		string Name { get; }
 
+		[SuppressMessage("Naming", "CA1716:Identifiers should not match keywords")]
 		string Namespace { get; }
 
 		XmlQualifiedName QName { get; }

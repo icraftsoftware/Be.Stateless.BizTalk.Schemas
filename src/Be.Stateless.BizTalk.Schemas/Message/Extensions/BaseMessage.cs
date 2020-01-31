@@ -16,6 +16,7 @@
 
 #endregion
 
+using System;
 using Be.Stateless.BizTalk.ContextProperties;
 using Be.Stateless.Extensions;
 using Microsoft.BizTalk.Message.Interop;
@@ -39,6 +40,8 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 		public static void DeleteProperty<T>(this IBaseMessage message, MessageContextProperty<T, string> property)
 			where T : MessageContextPropertyBase, new()
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			message.Context.Write(property.Name, property.Namespace, null);
 		}
 
@@ -46,12 +49,16 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 			where T : MessageContextPropertyBase, new()
 			where TR : struct
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			message.Context.Write(property.Name, property.Namespace, null);
 		}
 
 		public static void DeleteProperty<T>(this XLANGMessage message, MessageContextProperty<T, object> property)
 			where T : MessageContextPropertyBase, new()
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			message.SetPropertyValue(property.Type, null);
 		}
 
@@ -62,6 +69,8 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 		public static bool IsPromoted<T>(this IBaseMessage message, MessageContextProperty<T, string> property)
 			where T : MessageContextPropertyBase, new()
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			return !message.GetProperty(property).IsNullOrEmpty() && message.Context.IsPromoted(property.Name, property.Namespace);
 		}
 
@@ -69,12 +78,16 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 			where T : MessageContextPropertyBase, new()
 			where TV : struct
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			return message.GetProperty(property).HasValue && message.Context.IsPromoted(property.Name, property.Namespace);
 		}
 
 		public static void Promote<T>(this IBaseMessage message, MessageContextProperty<T, string> property, string value)
 			where T : MessageContextPropertyBase, new()
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			if (value != null) message.Context.Promote(property.Name, property.Namespace, value);
 		}
 
@@ -82,6 +95,8 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 			where T : MessageContextPropertyBase, new()
 			where TV : struct
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			message.Context.Promote(property.Name, property.Namespace, value);
 		}
 
@@ -92,6 +107,8 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 		public static string GetProperty<T>(this IBaseMessage message, MessageContextProperty<T, string> property)
 			where T : MessageContextPropertyBase, new()
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			var value = message.Context.Read(property.Name, property.Namespace);
 			return (string) value;
 		}
@@ -100,6 +117,8 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 			where T : MessageContextPropertyBase, new()
 			where TR : struct
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			var value = message.Context.Read(property.Name, property.Namespace);
 			return (TR?) value;
 		}
@@ -107,6 +126,8 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 		public static string GetProperty<T>(this XLANGMessage message, MessageContextProperty<T, string> property)
 			where T : MessageContextPropertyBase, new()
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			var value = message.GetPropertyValue(property.Type);
 			return (string) value;
 		}
@@ -115,6 +136,8 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 			where T : MessageContextPropertyBase, new()
 			where TR : struct
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			var value = message.GetPropertyValue(property.Type);
 			return (TR?) value;
 		}
@@ -126,6 +149,8 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 		public static void SetProperty<T>(this IBaseMessage message, MessageContextProperty<T, string> property, string value)
 			where T : MessageContextPropertyBase, new()
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			if (value != null) message.Context.Write(property.Name, property.Namespace, value);
 		}
 
@@ -133,12 +158,16 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 			where T : MessageContextPropertyBase, new()
 			where TV : struct
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			message.Context.Write(property.Name, property.Namespace, value);
 		}
 
 		public static void SetProperty<T>(this XLANGMessage message, MessageContextProperty<T, string> property, string value)
 			where T : MessageContextPropertyBase, new()
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			if (value != null) message.SetPropertyValue(property.Type, value);
 		}
 
@@ -146,6 +175,8 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 			where T : MessageContextPropertyBase, new()
 			where TV : struct
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (property is null) throw new ArgumentNullException(nameof(property));
 			message.SetPropertyValue(property.Type, value);
 		}
 

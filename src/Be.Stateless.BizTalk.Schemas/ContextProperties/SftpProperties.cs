@@ -16,6 +16,7 @@
 
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
 using WCF;
 
 namespace Be.Stateless.BizTalk.ContextProperties
@@ -34,6 +35,7 @@ namespace Be.Stateless.BizTalk.ContextProperties
 	/// It is detrimental to enable <see cref="BtsProperties.IsDynamicSend"/> when setting these properties at runtime.
 	/// </para>
 	/// </remarks>
+	[SuppressMessage("Design", "CA1052:Static holder types should be Static or NotInheritable")]
 	public class SftpProperties
 	{
 		/// <summary>

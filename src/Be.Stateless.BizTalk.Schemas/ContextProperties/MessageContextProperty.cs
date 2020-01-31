@@ -17,6 +17,7 @@
 #endregion
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Xml;
 using Be.Stateless.BizTalk.Message.Extensions;
 using Microsoft.BizTalk.Message.Interop;
@@ -46,17 +47,21 @@ namespace Be.Stateless.BizTalk.ContextProperties
 	/// <seealso cref="BaseMessage.SetProperty{T,TV}(IBaseMessage,ContextProperties.MessageContextProperty{T,TV},TV)"/>
 	/// <seealso cref="BaseMessage.Promote{T}(IBaseMessage,ContextProperties.MessageContextProperty{T,string},string)"/>
 	/// <seealso cref="BaseMessage.Promote{T,TV}(IBaseMessage,ContextProperties.MessageContextProperty{T,TV},TV)"/>
+	[SuppressMessage("Globalization", "CA1303:Do not pass literals as localized parameters")]
+	[SuppressMessage("Usage", "CA2225:Operator overloads have named alternates")]
 	public class MessageContextProperty<T, TR> : IMessageContextProperty
 		where T : MessageContextPropertyBase, new()
 	{
 		#region Operators
 
 		// IConvertible supports writing of filter expression against Enum values without having to explicitly convert them to a string 
+		[SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations")]
 		public static bool operator ==(MessageContextProperty<T, TR> property, IConvertible value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
+		[SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations")]
 		public static bool operator ==(MessageContextProperty<T, TR> property, TR value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
@@ -82,11 +87,13 @@ namespace Be.Stateless.BizTalk.ContextProperties
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
+		[SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations")]
 		public static bool operator !=(MessageContextProperty<T, TR> property, IConvertible value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
+		[SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations")]
 		public static bool operator !=(MessageContextProperty<T, TR> property, TR value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
@@ -114,6 +121,8 @@ namespace Be.Stateless.BizTalk.ContextProperties
 
 		#endregion
 
+		[SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations")]
+		[SuppressMessage("Globalization", "CA1305:Specify IFormatProvider")]
 		static MessageContextProperty()
 		{
 			var t = new T();
@@ -136,20 +145,11 @@ namespace Be.Stateless.BizTalk.ContextProperties
 
 		public XmlQualifiedName QName { get; private set; }
 
-		public string Name
-		{
-			get { return QName.Name; }
-		}
+		public string Name => QName.Name;
 
-		public string Namespace
-		{
-			get { return QName.Namespace; }
-		}
+		public string Namespace => QName.Namespace;
 
-		public Type Type
-		{
-			get { return typeof(T); }
-		}
+		public Type Type => typeof(T);
 
 		#endregion
 	}
