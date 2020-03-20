@@ -27,7 +27,23 @@ namespace Be.Stateless.BizTalk.ContextProperties
 {
 	public class MessageContextPropertyFixture
 	{
-		#region Nested Type: DummyProperty
+		[Fact]
+		[SuppressMessage("ReSharper", "ObjectCreationAsStatement")]
+		public void MessageContextPropertyEnforcesStrongTyping()
+		{
+			Action act = () => new MessageContextProperty<DummyProperty, string>();
+			act.Should().NotThrow();
+		}
+
+		[Fact]
+		[SuppressMessage("ReSharper", "ObjectCreationAsStatement")]
+		public void MessageContextPropertyThrowsWhenSchemaDeclaredPropertyTypeIsNotRespected()
+		{
+			Action act = () => new MessageContextProperty<DummyProperty, int>();
+			act.Should().Throw<TypeInitializationException>()
+				.WithInnerExceptionExactly<ArgumentException>()
+				.WithMessage("Message context property 'DummyProperty' is of type 'String' but MessageContextProperty<DummyProperty, Int32> declares it of type 'Int32'.");
+		}
 
 		private class DummyProperty : MessageContextPropertyBase
 		{
@@ -40,26 +56,6 @@ namespace Be.Stateless.BizTalk.ContextProperties
 			#endregion
 
 			private static readonly XmlQualifiedName _qualifiedName = new XmlQualifiedName(@"DummyProperty", @"urn:schemas.stateless.be:biztalk:properties:dummy:2012:04");
-		}
-
-		#endregion
-
-		[Fact]
-		[SuppressMessage("ReSharper", "ObjectCreationAsStatement")]
-		public void MessageContextPropertyThrowsWhenSchemaDeclaredPropertyTypeIsNotRespected()
-		{
-			Action act = () => new MessageContextProperty<DummyProperty, int>();
-			act.Should().Throw<TypeInitializationException>()
-				.WithInnerExceptionExactly<ArgumentException>()
-				.WithMessage("Message context property 'DummyProperty' is of type 'String' but MessageContextProperty<DummyProperty, Int32> declares it of type 'Int32'.");
-		}
-
-		[Fact]
-		[SuppressMessage("ReSharper", "ObjectCreationAsStatement")]
-		public void MessageContextPropertyEnforcesStrongTyping()
-		{
-			Action act = () => new MessageContextProperty<DummyProperty, string>();
-			act.Should().NotThrow();
 		}
 	}
 }
