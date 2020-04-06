@@ -47,7 +47,6 @@ namespace Be.Stateless.BizTalk.ContextProperties
 	/// <seealso cref="BaseMessage.SetProperty{T,TV}(IBaseMessage,ContextProperties.MessageContextProperty{T,TV},TV)"/>
 	/// <seealso cref="BaseMessage.Promote{T}(IBaseMessage,ContextProperties.MessageContextProperty{T,string},string)"/>
 	/// <seealso cref="BaseMessage.Promote{T,TV}(IBaseMessage,ContextProperties.MessageContextProperty{T,TV},TV)"/>
-	[SuppressMessage("Globalization", "CA1303:Do not pass literals as localized parameters")]
 	[SuppressMessage("Usage", "CA2225:Operator overloads have named alternates")]
 	public class MessageContextProperty<T, TR> : IMessageContextProperty
 		where T : MessageContextPropertyBase, new()
