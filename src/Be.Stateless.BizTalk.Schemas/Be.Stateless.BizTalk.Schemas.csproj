@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <!--<TargetFrameworks>netcoreapp2.2;net472</TargetFrameworks>-->
+    <TargetFramework>net48</TargetFramework>
     <RootNamespace>Be.Stateless.BizTalk</RootNamespace>
     <AssemblyTitle>Be.Stateless.BizTalk.Schemas</AssemblyTitle>
     <Description>BizTalk Factory's document and property schemas for general purpose BizTalk Server development.</Description>
