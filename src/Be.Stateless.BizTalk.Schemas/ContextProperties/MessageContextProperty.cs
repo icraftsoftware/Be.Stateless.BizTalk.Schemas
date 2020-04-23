@@ -37,16 +37,15 @@ namespace Be.Stateless.BizTalk.ContextProperties
 	/// The type of the <see cref="MessageContextPropertyBase"/>-derived property.
 	/// </typeparam>
 	/// <remarks>
-	/// To offer a truly strong-typed API over <see cref="IBaseMessageContext"/> properties, this wrapper is meant to be
-	/// used in conjunction with the <see cref="IBaseMessage"/> extension methods provided by <see
-	/// cref="BaseMessage"/>.
+	/// To offer a truly strong-typed API over <see cref="IBaseMessageContext"/> properties, this wrapper is meant to be used in
+	/// conjunction with the <see cref="IBaseMessage"/> extension methods provided by <see cref="BaseMessage"/>.
 	/// </remarks>
 	/// <seealso cref="BaseMessage.GetProperty{T}(IBaseMessage,MessageContextProperty{T,string})"/>
 	/// <seealso cref="BaseMessage.GetProperty{T,TResult}(IBaseMessage,MessageContextProperty{T,TResult})"/>
-	/// <seealso cref="BaseMessage.SetProperty{T}(IBaseMessage,ContextProperties.MessageContextProperty{T,string},string)"/>
-	/// <seealso cref="BaseMessage.SetProperty{T,TV}(IBaseMessage,ContextProperties.MessageContextProperty{T,TV},TV)"/>
-	/// <seealso cref="BaseMessage.Promote{T}(IBaseMessage,ContextProperties.MessageContextProperty{T,string},string)"/>
-	/// <seealso cref="BaseMessage.Promote{T,TV}(IBaseMessage,ContextProperties.MessageContextProperty{T,TV},TV)"/>
+	/// <seealso cref="BaseMessage.SetProperty{T}(IBaseMessage,MessageContextProperty{T,string},string)"/>
+	/// <seealso cref="BaseMessage.SetProperty{T,TV}(IBaseMessage,MessageContextProperty{T,TV},TV)"/>
+	/// <seealso cref="BaseMessage.Promote{T}(IBaseMessage,MessageContextProperty{T,string},string)"/>
+	/// <seealso cref="BaseMessage.Promote{T,TV}(IBaseMessage,MessageContextProperty{T,TV},TV)"/>
 	[SuppressMessage("Usage", "CA2225:Operator overloads have named alternates")]
 	public class MessageContextProperty<T, TR> : IMessageContextProperty
 		where T : MessageContextPropertyBase, new()
