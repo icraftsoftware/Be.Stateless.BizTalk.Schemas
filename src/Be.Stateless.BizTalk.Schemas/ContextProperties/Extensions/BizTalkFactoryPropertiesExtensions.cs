@@ -30,27 +30,27 @@ namespace Be.Stateless.BizTalk.ContextProperties.Extensions
 	[SuppressMessage("ReSharper", "UnusedMember.Global")]
 	public static class BizTalkFactoryPropertiesExtensions
 	{
-		public static IBaseMessage SetCorrelationToken(this IBaseMessage message, string correlationToken)
+		public static IBaseMessage SetCorrelationId(this IBaseMessage message, string correlationId)
 		{
-			message.SetProperty(BizTalkFactoryProperties.CorrelationToken, correlationToken);
+			message.SetProperty(BizTalkFactoryProperties.CorrelationId, correlationId);
 			return message;
 		}
 
-		public static IBaseMessageContext SetCorrelationToken(this IBaseMessageContext context, string correlationToken)
+		public static IBaseMessageContext SetCorrelationId(this IBaseMessageContext context, string correlationId)
 		{
-			context.SetProperty(BizTalkFactoryProperties.CorrelationToken, correlationToken);
+			context.SetProperty(BizTalkFactoryProperties.CorrelationId, correlationId);
 			return context;
 		}
 
-		public static IBaseMessage PromoteCorrelationToken(this IBaseMessage message, string correlationToken)
+		public static IBaseMessage PromoteCorrelationId(this IBaseMessage message, string correlationId)
 		{
-			message.Promote(BizTalkFactoryProperties.CorrelationToken, correlationToken);
+			message.Promote(BizTalkFactoryProperties.CorrelationId, correlationId);
 			return message;
 		}
 
-		public static IBaseMessageContext PromoteCorrelationToken(this IBaseMessageContext context, string correlationToken)
+		public static IBaseMessageContext PromoteCorrelationId(this IBaseMessageContext context, string correlationId)
 		{
-			context.Promote(BizTalkFactoryProperties.CorrelationToken, correlationToken);
+			context.Promote(BizTalkFactoryProperties.CorrelationId, correlationId);
 			return context;
 		}
 

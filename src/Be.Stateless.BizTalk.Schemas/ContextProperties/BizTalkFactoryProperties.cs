@@ -25,8 +25,8 @@ namespace Be.Stateless.BizTalk.ContextProperties
 		public static readonly MessageContextProperty<ContextBuilderTypeName, string> ContextBuilderTypeName
 			= new MessageContextProperty<ContextBuilderTypeName, string>();
 
-		public static readonly MessageContextProperty<CorrelationToken, string> CorrelationToken
-			= new MessageContextProperty<CorrelationToken, string>();
+		public static readonly MessageContextProperty<CorrelationId, string> CorrelationId
+			= new MessageContextProperty<CorrelationId, string>();
 
 		/// <summary>
 		/// To be used when one application has to be connected to several distinct sets of interacting parties and cannot leak
