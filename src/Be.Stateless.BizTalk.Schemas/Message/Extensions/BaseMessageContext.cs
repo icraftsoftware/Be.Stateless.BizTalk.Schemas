@@ -17,6 +17,7 @@
 #endregion
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using Be.Stateless.BizTalk.ContextProperties;
 using Be.Stateless.Extensions;
@@ -25,6 +26,7 @@ using Microsoft.XLANGs.BaseTypes;
 
 namespace Be.Stateless.BizTalk.Message.Extensions
 {
+	[SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Public API.")]
 	public static class BaseMessageContext
 	{
 		#region message's context property deletion

@@ -16,10 +16,13 @@
 
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
 using HTTP;
 
 namespace Be.Stateless.BizTalk.ContextProperties
 {
+	[SuppressMessage("ReSharper", "UnusedType.Global", Justification = "Public API.")]
+	[SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Public API.")]
 	public static class HttpProperties
 	{
 		public static readonly MessageContextProperty<ContentType, string> ContentType

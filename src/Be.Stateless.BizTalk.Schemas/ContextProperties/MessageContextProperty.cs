@@ -54,64 +54,76 @@ namespace Be.Stateless.BizTalk.ContextProperties
 
 		// IConvertible supports writing of filter expression against Enum values without having to explicitly convert them to a string 
 		[SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations")]
+		[SuppressMessage("ReSharper", "UnusedParameter.Global")]
 		public static bool operator ==(MessageContextProperty<T, TR> property, IConvertible value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
 		[SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations")]
+		[SuppressMessage("ReSharper", "UnusedParameter.Global")]
 		public static bool operator ==(MessageContextProperty<T, TR> property, TR value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
+		[SuppressMessage("ReSharper", "UnusedParameter.Global")]
 		public static bool operator >(MessageContextProperty<T, TR> property, IConvertible value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
+		[SuppressMessage("ReSharper", "UnusedParameter.Global")]
 		public static bool operator >(MessageContextProperty<T, TR> property, TR value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
+		[SuppressMessage("ReSharper", "UnusedParameter.Global")]
 		public static bool operator >=(MessageContextProperty<T, TR> property, IConvertible value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
+		[SuppressMessage("ReSharper", "UnusedParameter.Global")]
 		public static bool operator >=(MessageContextProperty<T, TR> property, TR value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
 		[SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations")]
+		[SuppressMessage("ReSharper", "UnusedParameter.Global")]
 		public static bool operator !=(MessageContextProperty<T, TR> property, IConvertible value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
 		[SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations")]
+		[SuppressMessage("ReSharper", "UnusedParameter.Global")]
 		public static bool operator !=(MessageContextProperty<T, TR> property, TR value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
+		[SuppressMessage("ReSharper", "UnusedParameter.Global")]
 		public static bool operator <(MessageContextProperty<T, TR> property, IConvertible value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
+		[SuppressMessage("ReSharper", "UnusedParameter.Global")]
 		public static bool operator <(MessageContextProperty<T, TR> property, TR value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
+		[SuppressMessage("ReSharper", "UnusedParameter.Global")]
 		public static bool operator <=(MessageContextProperty<T, TR> property, IConvertible value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
 		}
 
+		[SuppressMessage("ReSharper", "UnusedParameter.Global")]
 		public static bool operator <=(MessageContextProperty<T, TR> property, TR value)
 		{
 			throw new NotSupportedException("Exists only to support the writing of SendPort's Filter predicates in Binding DSL.");
@@ -141,7 +153,7 @@ namespace Be.Stateless.BizTalk.ContextProperties
 
 		#region IMessageContextProperty Members
 
-		public XmlQualifiedName QName { get; private set; }
+		public XmlQualifiedName QName { get; }
 
 		public string Name => QName.Name;
 

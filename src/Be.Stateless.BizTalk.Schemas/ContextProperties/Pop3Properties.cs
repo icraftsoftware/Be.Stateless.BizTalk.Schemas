@@ -21,7 +21,8 @@ using POP3;
 
 namespace Be.Stateless.BizTalk.ContextProperties
 {
-	[SuppressMessage("ReSharper", "UnusedMember.Global")]
+	[SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Public API.")]
+	[SuppressMessage("ReSharper", "UnusedType.Global", Justification = "Public API.")]
 	public static class Pop3Properties
 	{
 		public static readonly MessageContextProperty<Date, string> Date

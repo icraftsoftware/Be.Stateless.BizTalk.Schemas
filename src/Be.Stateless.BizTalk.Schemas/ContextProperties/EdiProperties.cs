@@ -22,7 +22,8 @@ using EDI;
 namespace Be.Stateless.BizTalk.ContextProperties
 {
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
-	[SuppressMessage("ReSharper", "UnusedMember.Global")]
+	[SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Public API.")]
+	[SuppressMessage("ReSharper", "UnusedType.Global", Justification = "Public API.")]
 	public static class EdiProperties
 	{
 		public static readonly MessageContextProperty<BGM1_1, string> BGM1_1

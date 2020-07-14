@@ -36,6 +36,8 @@ namespace Be.Stateless.BizTalk.ContextProperties
 	/// </para>
 	/// </remarks>
 	[SuppressMessage("Design", "CA1052:Static holder types should be Static or NotInheritable")]
+	[SuppressMessage("ReSharper", "UnusedType.Global", Justification = "Public API.")]
+	[SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Public API.")]
 	public class SftpProperties
 	{
 		/// <summary>

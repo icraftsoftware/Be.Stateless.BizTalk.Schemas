@@ -21,7 +21,8 @@ using WCF;
 
 namespace Be.Stateless.BizTalk.ContextProperties
 {
-	[SuppressMessage("ReSharper", "UnusedMember.Global")]
+	[SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Public API.")]
+	[SuppressMessage("ReSharper", "UnusedType.Global", Justification = "Public API.")]
 	public static class WcfProperties
 	{
 		public static readonly MessageContextProperty<Action, string> Action

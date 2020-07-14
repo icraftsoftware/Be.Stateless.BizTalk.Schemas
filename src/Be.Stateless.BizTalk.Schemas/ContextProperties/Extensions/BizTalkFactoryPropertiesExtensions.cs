@@ -27,7 +27,8 @@ namespace Be.Stateless.BizTalk.ContextProperties.Extensions
 	/// Fluent-syntax <see cref="IBaseMessage"/> and <see cref="IBaseMessageContext"/> helpers for <see
 	/// cref="BizTalkFactoryProperties"/> context properties.
 	/// </summary>
-	[SuppressMessage("ReSharper", "UnusedMember.Global")]
+	[SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Public API.")]
+	[SuppressMessage("ReSharper", "UnusedType.Global", Justification = "Public API.")]
 	public static class BizTalkFactoryPropertiesExtensions
 	{
 		public static IBaseMessage SetCorrelationId(this IBaseMessage message, string correlationId)

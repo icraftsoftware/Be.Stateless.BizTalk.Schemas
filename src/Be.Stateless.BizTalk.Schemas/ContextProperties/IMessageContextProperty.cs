@@ -27,6 +27,7 @@ namespace Be.Stateless.BizTalk.ContextProperties
 	/// Interface contract of the strong-typing wrapper for any <see cref="MessageContextProperty{T,TR}"/>-derived
 	/// property, <see cref="MessageContextPropertyBase"/>.
 	/// </summary>
+	[SuppressMessage("ReSharper", "UnusedMemberInSuper.Global", Justification = "Public API.")]
 	public interface IMessageContextProperty
 	{
 		string Name { get; }

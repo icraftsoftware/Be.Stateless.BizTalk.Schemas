@@ -17,6 +17,7 @@
 #endregion
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Be.Stateless.BizTalk.ContextProperties;
 using Be.Stateless.Extensions;
 using Microsoft.BizTalk.Message.Interop;
@@ -33,6 +34,7 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 	/// setters, and promoters.
 	/// </para>
 	/// </remarks>
+	[SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Public API.")]
 	public static class BaseMessage
 	{
 		#region message's context property deletion
@@ -113,6 +115,7 @@ namespace Be.Stateless.BizTalk.Message.Extensions
 			return (string) value;
 		}
 
+		[SuppressMessage("ReSharper", "MemberCanBePrivate.Global", Justification = "Public API.")]
 		public static TR? GetProperty<T, TR>(this IBaseMessage message, MessageContextProperty<T, TR> property)
 			where T : MessageContextPropertyBase, new()
 			where TR : struct

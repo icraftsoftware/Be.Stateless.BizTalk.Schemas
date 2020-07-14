@@ -16,10 +16,12 @@
 
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
 using Be.Stateless.BizTalk.Schemas.BizTalkFactory;
 
 namespace Be.Stateless.BizTalk.ContextProperties
 {
+	[SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Public API.")]
 	public static class BizTalkFactoryProperties
 	{
 		public static readonly MessageContextProperty<ContextBuilderTypeName, string> ContextBuilderTypeName

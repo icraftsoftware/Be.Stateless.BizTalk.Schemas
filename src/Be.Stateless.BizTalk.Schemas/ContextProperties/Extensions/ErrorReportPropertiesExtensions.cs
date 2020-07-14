@@ -26,7 +26,8 @@ namespace Be.Stateless.BizTalk.ContextProperties.Extensions
 	/// Fluent-syntax <see cref="IBaseMessage"/> and <see cref="IBaseMessageContext"/> helpers for <see
 	/// cref="ErrorReportProperties"/> context properties.
 	/// </summary>
-	[SuppressMessage("ReSharper", "UnusedMember.Global")]
+	[SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Public API.")]
+	[SuppressMessage("ReSharper", "UnusedType.Global", Justification = "Public API.")]
 	public static class ErrorReportPropertiesExtensions
 	{
 		public static bool HasFailed(this IBaseMessage message)
