@@ -35,7 +35,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Be.Stateless.Extensions" Version="2.0.20196.40210" />
     <PackageReference Include="BizTalk.Server.2020.Build" Version="1.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; compile; build; native; analyzers; buildtransitive</IncludeAssets>
@@ -59,18 +58,6 @@
     <Schema Include="Schemas\BizTalkFactoryProperties.xsd">
       <TypeName>Properties</TypeName>
       <Namespace>Be.Stateless.BizTalk.Schemas.BizTalkFactory</Namespace>
-    </Schema>
-    <Schema Include="Schemas\EdiProperties.xsd">
-      <TypeName>UnexposedEdiProperties</TypeName>
-      <Namespace>EDI</Namespace>
-    </Schema>
-    <Schema Include="Schemas\SftpProperties.xsd">
-      <TypeName>ConcealedProperties</TypeName>
-      <Namespace>WCF</Namespace>
-    </Schema>
-    <Schema Include="Schemas\SystemProperties.xsd">
-      <TypeName>UnexposedSystemProperties</TypeName>
-      <Namespace>BTS</Namespace>
     </Schema>
   </ItemGroup>
 
