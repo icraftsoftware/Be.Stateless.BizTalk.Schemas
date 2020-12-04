@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <RootNamespace>Be.Stateless.BizTalk</RootNamespace>
-    <AssemblyTitle>Be.Stateless.BizTalk.Schemas</AssemblyTitle>
-    <Description>BizTalk Factory's document and property schemas for general purpose BizTalk Server development.</Description>
+    <AssemblyTitle>Be.Stateless.BizTalk.Schema.Unit</AssemblyTitle>
+    <Description>BizTalk Factory's schema unit test helpers for general purpose BizTalk Server development.</Description>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -19,9 +19,7 @@
     <IsPackable>true</IsPackable>
     <PackageId>$(AssemblyTitle)</PackageId>
     <PackageDescription>$(Description)</PackageDescription>
-    <!--<PackageIconUrl>icon url prop</PackageIconUrl>-->
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
-    <!--<PackageReleaseNotes>release notes prop</PackageReleaseNotes>-->
     <PackageTags>library extension utility</PackageTags>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -37,11 +35,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BizTalk.Server.2020.Build" Version="1.0.2">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; compile; build; native; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.1">
+    <PackageReference Include="Be.Stateless.BizTalk.Xml" Version="2.0.20338.28952" />
+    <PackageReference Include="BizTalk.Server.2020.Runtime" Version="1.0.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -49,18 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Schema Include="Schemas\Xml\Any.xsd">
-      <TypeName>Any</TypeName>
-      <Namespace>Be.Stateless.BizTalk.Schemas.Xml</Namespace>
-    </Schema>
-    <Schema Include="Schemas\Xml\Envelope.xsd">
-      <TypeName>Envelope</TypeName>
-      <Namespace>Be.Stateless.BizTalk.Schemas.Xml</Namespace>
-    </Schema>
-    <Schema Include="Schemas\BizTalkFactoryProperties.xsd">
-      <TypeName>Properties</TypeName>
-      <Namespace>Be.Stateless.BizTalk.Schemas.BizTalkFactory</Namespace>
-    </Schema>
+    <ProjectReference Include="..\Be.Stateless.BizTalk.Schemas\Be.Stateless.BizTalk.Schemas.csproj" />
   </ItemGroup>
 
 </Project>
