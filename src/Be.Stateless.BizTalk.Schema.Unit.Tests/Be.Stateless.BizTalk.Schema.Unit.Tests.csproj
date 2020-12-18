@@ -33,7 +33,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="FluentAssertions" Version="5.10.3" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
     <PackageReference Include="xunit.core" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
       <PrivateAssets>all</PrivateAssets>
@@ -44,10 +44,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Be.Stateless.BizTalk.Schema.Unit\Be.Stateless.BizTalk.Schema.Unit.csproj" />
     <ProjectReference Include="..\Be.Stateless.BizTalk.Schemas\Be.Stateless.BizTalk.Schemas.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Unit\Schema\" />
   </ItemGroup>
 
 </Project>

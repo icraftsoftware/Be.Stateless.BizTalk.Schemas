@@ -37,30 +37,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BizTalk.Server.2020.Build" Version="1.0.2">
+    <PackageReference Include="BizTalk.Server.2020.Build" Version="1.0.13" Condition="'$(TF_BUILD)' != 'true'">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; compile; build; native; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.1">
+    <PackageReference Include="BizTalk.Server.2020.Runtime" Version="1.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Schema Include="Schemas\Xml\Any.xsd">
-      <TypeName>Any</TypeName>
-      <Namespace>Be.Stateless.BizTalk.Schemas.Xml</Namespace>
-    </Schema>
-    <Schema Include="Schemas\Xml\Envelope.xsd">
-      <TypeName>Envelope</TypeName>
-      <Namespace>Be.Stateless.BizTalk.Schemas.Xml</Namespace>
-    </Schema>
-    <Schema Include="Schemas\BizTalkFactoryProperties.xsd">
-      <TypeName>Properties</TypeName>
-      <Namespace>Be.Stateless.BizTalk.Schemas.BizTalkFactory</Namespace>
-    </Schema>
   </ItemGroup>
 
 </Project>
