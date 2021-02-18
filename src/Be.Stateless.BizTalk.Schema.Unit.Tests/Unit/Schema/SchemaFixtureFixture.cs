@@ -1,6 +1,6 @@
 ﻿#region Copyright & License
 
-// Copyright © 2012 - 2020 François Chabot
+// Copyright © 2012 - 2021 François Chabot
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ using Be.Stateless.Resources;
 using BTF2Schemas;
 using FluentAssertions;
 using Xunit;
-using static Be.Stateless.Unit.DelegateFactory;
+using static FluentAssertions.FluentActions;
 
 namespace Be.Stateless.BizTalk.Unit.Schema
 {
@@ -36,7 +36,7 @@ namespace Be.Stateless.BizTalk.Unit.Schema
 		[Fact]
 		public void LaxValidation()
 		{
-			Action(
+			Invoking(
 					() => new EnvelopeSchemaFixture().ValidateInstanceDocument(
 						ResourceManager.Load(Assembly.GetExecutingAssembly(), "Be.Stateless.BizTalk.Resources.Envelope.xml"),
 						XmlSchemaContentProcessing.Lax))
@@ -46,7 +46,7 @@ namespace Be.Stateless.BizTalk.Unit.Schema
 		[Fact]
 		public void StrictValidation()
 		{
-			Action(
+			Invoking(
 					() => new EnvelopeSchemaFixture().ValidateInstanceDocument(
 						ResourceManager.Load(Assembly.GetExecutingAssembly(), "Be.Stateless.BizTalk.Resources.Envelope.xml"),
 						XmlSchemaContentProcessing.Strict))
@@ -57,7 +57,7 @@ namespace Be.Stateless.BizTalk.Unit.Schema
 		public void ValidatingInvalidXmlDocumentThrows()
 		{
 			var instance = MessageBodyFactory.Create<btf2_services_header>();
-			Action(() => new DocumentSchemaFixture().ValidateInstanceDocument(instance))
+			Invoking(() => new DocumentSchemaFixture().ValidateInstanceDocument(instance))
 				.Should().Throw<XmlSchemaValidationException>()
 				.WithMessage(
 					"Error: The 'http://schemas.biztalk.org/btf-2-0/services:sendBy' element is invalid - The value '' is invalid according to its datatype 'http://www.w3.org/2001/XMLSchema:dateTime'*");
@@ -69,7 +69,7 @@ namespace Be.Stateless.BizTalk.Unit.Schema
 			var tempFileName = Path.GetTempFileName();
 			var instance = MessageBodyFactory.Create<btf2_services_header>();
 			instance.Save(tempFileName);
-			Action(() => new DocumentSchemaFixture().ValidateInstanceDocument(tempFileName))
+			Invoking(() => new DocumentSchemaFixture().ValidateInstanceDocument(tempFileName))
 				.Should().Throw<XmlSchemaValidationException>()
 				.WithMessage(
 					"Error: The 'http://schemas.biztalk.org/btf-2-0/services:sendBy' element is invalid - The value '' is invalid according to its datatype 'http://www.w3.org/2001/XMLSchema:dateTime'*");
@@ -80,7 +80,7 @@ namespace Be.Stateless.BizTalk.Unit.Schema
 		{
 			var instance = MessageBodyFactory.Create<btf2_services_header>(
 				ResourceManager.Load(Assembly.GetExecutingAssembly(), "Be.Stateless.BizTalk.Resources.Message.xml", s => s.ReadToEnd()));
-			Action(() => new DocumentSchemaFixture().ValidateInstanceDocument(instance))
+			Invoking(() => new DocumentSchemaFixture().ValidateInstanceDocument(instance))
 				.Should().NotThrow();
 		}
 
