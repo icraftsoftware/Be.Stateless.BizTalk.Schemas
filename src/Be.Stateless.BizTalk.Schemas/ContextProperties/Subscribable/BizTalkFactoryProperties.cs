@@ -1,6 +1,6 @@
 ﻿#region Copyright & License
 
-// Copyright © 2012 - 2020 François Chabot
+// Copyright © 2012 - 2021 François Chabot
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,27 +24,23 @@ namespace Be.Stateless.BizTalk.ContextProperties.Subscribable
 	[SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Public API.")]
 	public abstract class BizTalkFactoryProperties : Be.Stateless.BizTalk.ContextProperties.BizTalkFactoryProperties
 	{
-		public static readonly MessageContextProperty<CorrelationId, string> CorrelationId
-			= new MessageContextProperty<CorrelationId, string>();
+		public static readonly MessageContextProperty<CorrelationId, string> CorrelationId = new();
 
 		/// <summary>
 		/// To be used when one application has to be connected to several distinct sets of interacting parties and cannot leak
 		/// messages from one set of parties into another. In concrete terms, to be used in pub/sub of messages in order to keep
 		/// them strictly insulated within an individual set of such interacting parties.
 		/// </summary>
-		public static readonly MessageContextProperty<EnvironmentTag, string> EnvironmentTag
-			= new MessageContextProperty<EnvironmentTag, string>();
+		public static readonly MessageContextProperty<EnvironmentTag, string> EnvironmentTag = new();
 
 		/// <summary>
 		/// Name of the intended receiver of the current message.
 		/// </summary>
-		public static readonly MessageContextProperty<ReceiverName, string> ReceiverName
-			= new MessageContextProperty<ReceiverName, string>();
+		public static readonly MessageContextProperty<ReceiverName, string> ReceiverName = new();
 
 		/// <summary>
 		/// Name of the initiating sender of the current message.
 		/// </summary>
-		public static readonly MessageContextProperty<SenderName, string> SenderName
-			= new MessageContextProperty<SenderName, string>();
+		public static readonly MessageContextProperty<SenderName, string> SenderName = new();
 	}
 }

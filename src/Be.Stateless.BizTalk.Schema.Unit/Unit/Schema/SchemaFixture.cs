@@ -1,6 +1,6 @@
 ﻿#region Copyright & License
 
-// Copyright © 2012 - 2020 François Chabot
+// Copyright © 2012 - 2021 François Chabot
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 #endregion
 
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using System.Xml;
 using System.Xml.Schema;
 using Be.Stateless.BizTalk.Xml;
@@ -324,7 +323,7 @@ namespace Be.Stateless.BizTalk.Unit.Schema
 		/// <returns>
 		/// An <see cref="XmlDocument"/> that has loaded and validated the content of the XML <see cref="Stream"/>.
 		/// </returns>
-		protected XmlDocument ValidateInstanceDocument(Stream stream)
+		protected XmlDocument ValidateInstanceDocument(System.IO.Stream stream)
 		{
 			using (var reader = XmlReader.Create(stream))
 			{
@@ -344,7 +343,7 @@ namespace Be.Stateless.BizTalk.Unit.Schema
 		/// <returns>
 		/// An <see cref="XmlDocument"/> that has loaded and validated the content of the XML <see cref="Stream"/>.
 		/// </returns>
-		protected XmlDocument ValidateInstanceDocument(Stream stream, XmlSchemaContentProcessing contentProcessing)
+		protected XmlDocument ValidateInstanceDocument(System.IO.Stream stream, XmlSchemaContentProcessing contentProcessing)
 		{
 			using (var reader = XmlReader.Create(stream))
 			{
@@ -365,7 +364,7 @@ namespace Be.Stateless.BizTalk.Unit.Schema
 		/// <returns>
 		/// An <see cref="XmlDocument"/> that has loaded and validated the content of the XML <see cref="Stream"/>.
 		/// </returns>
-		protected XmlDocument ValidateInstanceDocument<T2>(Stream stream)
+		protected XmlDocument ValidateInstanceDocument<T2>(System.IO.Stream stream)
 			where T2 : SchemaBase, new()
 		{
 			using (var reader = XmlReader.Create(stream))
@@ -390,7 +389,7 @@ namespace Be.Stateless.BizTalk.Unit.Schema
 		/// <returns>
 		/// An <see cref="XmlDocument"/> that has loaded and validated the content of the XML <see cref="Stream"/>.
 		/// </returns>
-		protected XmlDocument ValidateInstanceDocument<T2>(Stream stream, XmlSchemaContentProcessing contentProcessing)
+		protected XmlDocument ValidateInstanceDocument<T2>(System.IO.Stream stream, XmlSchemaContentProcessing contentProcessing)
 			where T2 : SchemaBase, new()
 		{
 			using (var reader = XmlReader.Create(stream))
@@ -415,7 +414,7 @@ namespace Be.Stateless.BizTalk.Unit.Schema
 		/// <returns>
 		/// An <see cref="XmlDocument"/> that has loaded and validated the content of the XML <see cref="Stream"/>.
 		/// </returns>
-		protected XmlDocument ValidateInstanceDocument<T2, T3>(Stream stream)
+		protected XmlDocument ValidateInstanceDocument<T2, T3>(System.IO.Stream stream)
 			where T2 : SchemaBase, new()
 			where T3 : SchemaBase, new()
 		{
@@ -444,7 +443,7 @@ namespace Be.Stateless.BizTalk.Unit.Schema
 		/// <returns>
 		/// An <see cref="XmlDocument"/> that has loaded and validated the content of the XML <see cref="Stream"/>.
 		/// </returns>
-		protected XmlDocument ValidateInstanceDocument<T2, T3>(Stream stream, XmlSchemaContentProcessing contentProcessing)
+		protected XmlDocument ValidateInstanceDocument<T2, T3>(System.IO.Stream stream, XmlSchemaContentProcessing contentProcessing)
 			where T2 : SchemaBase, new()
 			where T3 : SchemaBase, new()
 		{
