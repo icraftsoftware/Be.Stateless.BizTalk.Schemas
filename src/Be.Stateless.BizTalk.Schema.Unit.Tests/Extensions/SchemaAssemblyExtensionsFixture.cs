@@ -31,14 +31,14 @@ namespace Be.Stateless.BizTalk.Extensions
 		public void GetUnpromotableMessageTypes()
 		{
 			Assembly.GetExecutingAssembly().GetUnpromotableMessageTypes()
-				.Should().BeEquivalentTo(Tuple.Create(typeof(DummySchema), SchemaMetadata.For<DummySchema>().MessageType));
+				.Should().BeEquivalentTo(new[] { Tuple.Create(typeof(DummySchema), SchemaMetadata.For<DummySchema>().MessageType) });
 		}
 
 		[Fact]
 		public void GetUnpromotableSchemaStrongNames()
 		{
 			Assembly.GetExecutingAssembly().GetUnpromotableSchemaStrongNames()
-				.Should().BeEquivalentTo(typeof(DummySchema));
+				.Should().BeEquivalentTo(new[] { typeof(DummySchema) });
 		}
 	}
 }
