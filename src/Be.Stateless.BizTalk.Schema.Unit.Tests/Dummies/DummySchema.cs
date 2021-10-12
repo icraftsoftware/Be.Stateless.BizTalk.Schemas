@@ -1,4 +1,4 @@
-#region Copyright & License
+﻿#region Copyright & License
 
 // Copyright © 2012 - 2021 François Chabot
 // 
@@ -24,9 +24,7 @@ namespace Be.Stateless.BizTalk.Dummies
 	namespace MyExtremelyLongAndBoringAndUnpromotableNamespaceThatWillCauseTheWholeBizTalkMessagingUniverseToCollapseCatastrophicallyAndHorrendously
 	{
 		[SchemaType(SchemaTypeEnum.Document)]
-		[Schema(
-			@"urn:schemas.stateless.be:biztalk:any:2012:12:MyExtremelyLongAndBoringAndUnpromotableNamespaceThatWillCauseTheWholeBizTalkMessagingUniverseToCollapseCatastrophicallyAndHorrendouslyAndAbruptlyAndIrremediablyAndWithUtmostDireConsequencesAndNoPossibleWayToTurnBackAndGoBackToNormalAgainAndLiveHappilyEverAfter",
-			@"DummyRoot")]
+		[Schema(@"urn:schemas.stateless.be:biztalk:any:2012:12:MyExtremelyLongAndBoringAndUnpromotableNamespaceThatWillCauseTheWholeBizTalkMessagingUniverseToCollapseCatastrophicallyAndHorrendouslyAndAbruptlyAndIrremediablyAndWithUtmostDireConsequencesAndNoPossibleWayToTurnBackAndGoBackToNormalAgainAndLiveHappilyEverAfter", @"DummyRoot")]
 		[Serializable]
 		[SchemaRoots(new[] { @"DummyRoot" })]
 		public sealed class DummySchema : SchemaBase
